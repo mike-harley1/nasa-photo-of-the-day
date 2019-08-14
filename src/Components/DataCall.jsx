@@ -10,6 +10,7 @@ export default function DataCall() {
 
     useEffect(()=>{
     axios.get("https://api.nasa.gov/planetary/apod?api_key=r3mevhcfPbBo9Aag9akrfkirveiS9hAaBDrxvZAO")
+    
     .then(res=>{
     
          const imgU = res.data.url
@@ -26,9 +27,13 @@ export default function DataCall() {
     .catch(err=>
         console.log("Now You Know You Done Messed Up:",err))
     },[])
+    if (!imgUrl||!imgDate||!imgDate) return <h3>Loading...</h3>;
+    else
 
     return(
         <div className="NasaImg">
+            
+            
    
          <ImgCard key={imgDate} image={imgUrl} title={imgTitle} myDate={imgDate}/>;
 
