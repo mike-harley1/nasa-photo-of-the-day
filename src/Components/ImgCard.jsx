@@ -1,11 +1,11 @@
 import React from 'react'
-import DataCall from './DataCall'
+
 
 const ImgCard = props => {
     return(
-        <div className="ImgCard" key={props}>
-            <h2>Nasa Photo Of The Day:{}</h2>
-            <img src ={props}/>>
+        <div className="ImgCard" key={props.myDate}>
+            <h2>{props.title}</h2>
+            <img src ={props.image} alt ={props.title}/>
         </div>
     )
 }
