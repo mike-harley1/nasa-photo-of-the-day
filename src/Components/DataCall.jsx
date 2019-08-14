@@ -6,7 +6,8 @@ export default function DataCall() {
    
     const[imgUrl,setImg] = useState()
     const[imgDate,setImgDate] =useState()
-    const[imgTitle,setImgTitle]=useState()
+    const[imgTitle,setImgTitle] =useState()
+    const[imgExp,setImgExp] =useState("")
 
     useEffect(()=>{
     axios.get("https://api.nasa.gov/planetary/apod?api_key=r3mevhcfPbBo9Aag9akrfkirveiS9hAaBDrxvZAO")
@@ -16,18 +17,21 @@ export default function DataCall() {
          const imgU = res.data.url
          const id = res.data.date
          const title = res.data.title
+         const explanation = res.data.explanation
          
         
-         console.log(res)
+         console.log(explanation)
     
         setImg(imgU)
         setImgDate(id)
         setImgTitle(title)
+        setImgExp(explanation)
     })
+
     .catch(err=>
         console.log("Now You Know You Done Messed Up:",err))
     },[])
-    if (!imgUrl||!imgDate||!imgDate) return <h3>Loading...</h3>;
+    if (!imgUrl||!imgDate||!imgDate||!imgExp) return <h3>Loading...</h3>;
     else
 
     return(
@@ -35,7 +39,7 @@ export default function DataCall() {
             
             
    
-         <ImgCard key={imgDate} image={imgUrl} title={imgTitle} myDate={imgDate}/>;
+         <ImgCard key={imgDate} imgExp={imgExp} image={imgUrl} title={imgTitle} myDate={imgDate}/>;
 
          
         </div>
