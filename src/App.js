@@ -2,12 +2,27 @@ import React from "react";
 import "./App.css";
 import DataCall from './Components/DataCall'
 
+import Styled from 'styled-components'
+
+const Htitle = Styled.div 
+
+`
+background-color:orange;
+color:white;
+font-size:60px;
+`
+const Container = Styled.div
+   `
+   background-color: royalblue;
+  `
+
+
 function App() {
   return (
-    <div className="App">
-     <h1>Nasa Photo Of The Day</h1>
+    <Container className="App">
+     <Htitle>Nasa Photo Of The Day</Htitle>
       <DataCall/>
-    </div>
+    </Container>
   );
 }
 
