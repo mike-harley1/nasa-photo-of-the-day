@@ -14,7 +14,7 @@ export default function DataCall() {
     
     .then(res=>{
     
-         const imgU = res.data.url
+         const imgU = res.data.hdurl
          const id = res.data.date
          const title = res.data.title
          const explanation = res.data.explanation
@@ -39,7 +39,7 @@ export default function DataCall() {
             
             
    
-         <ImgCard key={imgDate} imgExp={imgExp} image={imgUrl} title={imgTitle} myDate={imgDate}/>;
+         <ImgCard key={imgDate} date={imgDate} imgExp={imgExp} image={imgUrl} title={imgTitle} myDate={imgDate}/>;
 
          
         </div>
