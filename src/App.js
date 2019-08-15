@@ -1,14 +1,28 @@
 import React from "react";
 import "./App.css";
+import DataCall from './Components/DataCall'
+
+import Styled from 'styled-components'
+
+const Htitle = Styled.div 
+
+`
+background-color:orange;
+color:white;
+font-size:60px;
+`
+const Container = Styled.div
+   `
+   background-color: royalblue;
+  `
+
 
 function App() {
   return (
-    <div className="App">
-      <p>
-        Read through the instructions in the README.md file to build your NASA
-        app! Have fun 🚀!
-      </p>
-    </div>
+    <Container className="App">
+     <Htitle>Nasa Photo Of The Day</Htitle>
+      <DataCall/>
+    </Container>
   );
 }
 
